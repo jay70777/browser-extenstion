@@ -1,0 +1,9 @@
+import javax.servlet.http.HttpServletResponse;
+
+public class AntiClickjackingFilter {
+
+    public void addAntiClickjackingHeader(HttpServletResponse response) {
+        response.setHeader("Content-Security-Policy", "frame-ancestors 'none'");
+        response.setHeader("X-Frame-Options", "DENY");
+    }
+}
